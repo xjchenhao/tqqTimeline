@@ -2,16 +2,17 @@
 
 let request = require('request');
 let cheerio = require('cheerio');
+let moment = require('moment');
 
 let tqqTimeline = function (newOpts, callBack) {
 
     // 设置参数
-    let opts={};
+    let opts = {};
 
     Object.assign(opts, {
         userName: '',       //用户名
         type: 1             // 类别(0所有,1原创,4图片,6音乐,5视频,9心情)
-    },newOpts);
+    }, newOpts);
 
     // 时间轴的序列
     let timeLineArr = [];
@@ -44,9 +45,9 @@ let tqqTimeline = function (newOpts, callBack) {
 
                     // 获取页面数据
                     timeLineArr.push({
-                        time: $this.find('.pubInfo').find('.time').text(),
+                        time: moment($this.find('.pubInfo').find('.time').text(),"YYYY年MM月DD日 HH:mm").valueOf(),
                         from: $this.find('.pubInfo').find('.sico').attr('title'),
-                        img: (function () {
+                        images: (function () {
                             var arr = [];
 
                             $this.find('.mediaWrap img').each(function () {
