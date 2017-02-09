@@ -1,0 +1,28 @@
+{
+  "name": "tqq-timeline",
+  "version": "1.0.0",
+  "description": "qq weibo timeline crawler tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xjchenhao/tqqTimeline.git"
+  },
+  "keywords": [
+    "weibo",
+    "timeline",
+    "crawler"
+  ],
+  "author": "xjchenhao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xjchenhao/tqqTimeline/issues"
+  },
+  "homepage": "https://github.com/xjchenhao/tqqTimeline#readme",
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "request": "^2.69.0"
+  }
+}
